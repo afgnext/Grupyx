@@ -9,7 +9,7 @@
 <meta property="og:title" content="Grupyx — Los mejores planes no se planean." />
 <meta property="og:description" content="Una red social que desaparece cada día. Solo de 12:00 a 02:00 AM." />
 <meta property="og:type" content="website" />
-<title>Grupyx — Los mejores planes no se planean.</title>
+<title data-en="Grupyx — The best plans aren't planned.">Grupyx — Los mejores planes no se planean.</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,6 +146,29 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   transition:transform .25s ease, box-shadow .25s ease;
 }
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,61,166,.55)}
+
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang-toggle{
+  display:inline-flex;align-items:center;
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--line);
+  border-radius:999px;padding:3px;gap:2px;
+  backdrop-filter:blur(8px);
+}
+.lang-btn{
+  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;
+  letter-spacing:.15em;padding:5px 9px;border-radius:999px;
+  color:var(--ink-mute);cursor:pointer;transition:color .2s,background .2s,box-shadow .2s;
+  background:transparent;border:none;
+}
+.lang-btn[aria-pressed="true"]{
+  background:var(--grad-brand);color:#fff;
+  box-shadow:0 4px 12px rgba(177,75,255,.4);
+}
+.lang-btn:hover:not([aria-pressed="true"]){color:#fff}
+@media (max-width:520px){
+  .lang-btn{padding:4px 7px;font-size:10px}
+}
 .nav-burger{display:none;width:28px;height:18px;position:relative}
 .nav-burger span{position:absolute;left:0;right:0;height:2px;background:#fff;border-radius:2px;transition:transform .25s}
 .nav-burger span:nth-child(1){top:0}
@@ -791,13 +814,19 @@ footer{
     <span>Grupy<span class="x">x</span></span>
   </a>
   <div class="nav-links">
-    <a href="#concepto">El concepto</a>
+    <a href="#concepto" data-en="The concept">El concepto</a>
     <a href="#celestia">CelestIA</a>
-    <a href="#matching">Matching</a>
+    <a href="#matching" data-en="Matching">Matching</a>
     <a href="#lumen">Lumen</a>
-    <a href="#vs">Diferencia</a>
+    <a href="#vs" data-en="Difference">Diferencia</a>
   </div>
-  <a href="#descargar" class="nav-cta">Descargar</a>
+  <div class="nav-right">
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a href="#descargar" class="nav-cta" data-en="Download">Descargar</a>
+  </div>
 </nav>
 
 <!-- ============================================ HERO ============================================ -->
@@ -806,7 +835,7 @@ footer{
   <div class="container">
     <div class="badge-live reveal">
       <span class="dot"></span>
-      <span>Disponible de <b>12:00</b> a <b>02:00 AM</b></span>
+      <span data-en="Available from <b>12:00</b> to <b>02:00 AM</b>">Disponible de <b>12:00</b> a <b>02:00 AM</b></span>
     </div>
 
     <div class="hero-logo-wrap reveal-scale">
@@ -815,23 +844,23 @@ footer{
 
     <!-- MANIFIESTO inline, debajo del logo -->
     <div class="manifesto-inline reveal">
-      <span class="m-eyebrow"><span class="dot"></span>EL MANIFIESTO</span>
-      <p class="m-statement">
+      <span class="m-eyebrow"><span class="dot"></span><span data-en="THE MANIFESTO">EL MANIFIESTO</span></span>
+      <p class="m-statement" data-en='It&#39;s not another social app. <span class="grad-brand">It&#39;s the opposite.</span>'>
         No es otra app social.
         <span class="grad-brand">Es lo opuesto.</span>
       </p>
-      <p class="m-lead">
+      <p class="m-lead" data-en='While the rest entertain you <b>to keep you in</b>, Grupyx <span class="out">pushes you out into the real world</span>.'>
         Mientras el resto te entretiene <b>para que te quedes</b>,
         Grupyx <span class="out">te empuja a vivir afuera</span>.
       </p>
     </div>
 
-    <h1 class="reveal">
+    <h1 class="reveal" data-en='The best plans <span class="accent">aren&#39;t planned.</span>'>
       Los mejores planes
       <span class="accent">no se planean.</span>
     </h1>
 
-    <p class="hero-sub reveal">
+    <p class="hero-sub reveal" data-en="<b>Grupyx</b> connects groups of people in real time, harnessing spontaneity, proximity and artificial intelligence.">
       <b>Grupyx</b> conecta grupos de personas en tiempo real aprovechando la
       espontaneidad, la cercanía y la inteligencia artificial.
     </p>
@@ -845,12 +874,12 @@ footer{
         </span>
       </a>
       <a href="#celestia" class="btn btn-ghost">
-        Cómo funciona
+        <span data-en="How it works">Cómo funciona</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14m0 0l-6-6m6 6l6-6" stroke-linecap="round"/></svg>
       </a>
     </div>
 
-    <p class="hero-mini reveal">— Cada día empieza de cero —</p>
+    <p class="hero-mini reveal" data-en="— Every day starts from scratch —">— Cada día empieza de cero —</p>
   </div>
 
   <div class="scroll-cue reveal" aria-hidden="true">
@@ -863,13 +892,13 @@ footer{
 <section class="concept" id="concepto">
   <div class="container">
     <div class="concept-head">
-      <span class="eyebrow reveal"><span class="dot"></span>EL CONCEPTO</span>
-      <h2 class="reveal">
+      <span class="eyebrow reveal"><span class="dot"></span><span data-en="THE CONCEPT">EL CONCEPTO</span></span>
+      <h2 class="reveal" data-en='A social network <span class="grad-brand">that disappears</span> every day.'>
         Una red social
         <span class="grad-brand">que desaparece</span>
         cada día.
       </h2>
-      <p class="lead reveal">
+      <p class="lead reveal" data-en="Grupyx only lives between 12:00 and 02:00 AM. After that, everything resets. No endless feeds. No fakery. Just real plans happening now.">
         Grupyx solo vive entre las 12:00 y las 02:00 AM. Después, todo se reinicia.
         No hay feeds infinitos. No hay postureo. Solo planes reales ocurriendo ahora.
       </p>
@@ -880,60 +909,60 @@ footer{
         <div class="ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>
         </div>
-        <h3>Solo 14 horas al día</h3>
-        <p>De 12:00 a 02:00 AM. Fuera de ese rango, la app duerme. Si quieres entrar al plan, tienes que estar aquí cuando pasa.</p>
+        <h3 data-en="Just 14 hours a day">Solo 14 horas al día</h3>
+        <p data-en="From 12:00 to 02:00 AM. Outside that window, the app sleeps. If you want in on the plan, you have to be here when it happens.">De 12:00 a 02:00 AM. Fuera de ese rango, la app duerme. Si quieres entrar al plan, tienes que estar aquí cuando pasa.</p>
       </div>
       <div class="concept-card reveal" data-stagger style="--i:1">
         <div class="ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h12" stroke-linecap="round"/><path d="M21 18l-3-3m0 6l3-3" stroke-linecap="round"/></svg>
         </div>
-        <h3>Sin feed infinito</h3>
-        <p>No hay timeline ni doomscroll. Lo que ves es lo que está pasando hoy, cerca de ti, ahora mismo.</p>
+        <h3 data-en="No endless feed">Sin feed infinito</h3>
+        <p data-en="No timeline, no doomscroll. What you see is what's happening today, near you, right now.">No hay timeline ni doomscroll. Lo que ves es lo que está pasando hoy, cerca de ti, ahora mismo.</p>
       </div>
       <div class="concept-card reveal" data-stagger style="--i:2">
         <div class="ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12c2-3 5-4 8-4s6 1 8 4-2 6-8 6-10-3-8-6z" /><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
         </div>
-        <h3>Cero postureo</h3>
-        <p>No se trata de mostrar tu mejor vida. Se trata de decir “estoy aquí, me apetece esto” y encontrar a gente que también.</p>
+        <h3 data-en="Zero fakery">Cero postureo</h3>
+        <p data-en="It's not about showing your best life. It's about saying &quot;I'm here, I feel like doing this&quot; and finding others who do too.">No se trata de mostrar tu mejor vida. Se trata de decir “estoy aquí, me apetece esto” y encontrar a gente que también.</p>
       </div>
       <div class="concept-card reveal" data-stagger style="--i:3">
         <div class="ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>
         </div>
-        <h3>Reinicio total a las 02:00</h3>
-        <p>Todos los planes desaparecen al terminar el día. Mañana es una página en blanco. Nada se acumula.</p>
+        <h3 data-en="Full reset at 02:00">Reinicio total a las 02:00</h3>
+        <p data-en="Every plan disappears at the end of the day. Tomorrow is a blank page. Nothing piles up.">Todos los planes desaparecen al terminar el día. Mañana es una página en blanco. Nada se acumula.</p>
       </div>
     </div>
 
-    <p class="big-quote reveal">
+    <p class="big-quote reveal" data-en='You&#39;re paying attention<span class="gradl">…</span><br/>or you&#39;re <span class="gradl">missing out.</span>'>
       O estás atento<span class="gradl">…</span><br/>
       o te quedas <span class="gradl">fuera.</span>
     </p>
 
     <div class="phrases">
-      <div class="phrase reveal" data-stagger style="--i:0"><b>Inmediatez real.</b></div>
-      <div class="phrase reveal" data-stagger style="--i:1">Planes reales. Gente real. <b>Hoy.</b></div>
+      <div class="phrase reveal" data-stagger style="--i:0" data-en="<b>Real immediacy.</b>"><b>Inmediatez real.</b></div>
+      <div class="phrase reveal" data-stagger style="--i:1" data-en="Real plans. Real people. <b>Today.</b>">Planes reales. Gente real. <b>Hoy.</b></div>
     </div>
 
     <!-- TIMELINE -->
     <div class="timeline-wrap reveal">
-      <div class="timeline-title">Un día en Grupyx</div>
+      <div class="timeline-title" data-en="A day in Grupyx">Un día en Grupyx</div>
       <div class="timeline">
         <div class="tl-step">
           <div class="tl-time">12:00</div>
           <div class="tl-dot"></div>
-          <div class="tl-label">Apertura. La app despierta y empiezan a aparecer los primeros planes.</div>
+          <div class="tl-label" data-en="Opening. The app wakes up and the first plans start appearing.">Apertura. La app despierta y empiezan a aparecer los primeros planes.</div>
         </div>
         <div class="tl-step">
           <div class="tl-time">18:00</div>
           <div class="tl-dot"></div>
-          <div class="tl-label">Máximo movimiento. La noche se cocina en tiempo real.</div>
+          <div class="tl-label" data-en="Peak movement. The night is cooked in real time.">Máximo movimiento. La noche se cocina en tiempo real.</div>
         </div>
         <div class="tl-step">
           <div class="tl-time">02:00</div>
           <div class="tl-dot"></div>
-          <div class="tl-label">Reinicio total. Todo desaparece. Mañana, página en blanco.</div>
+          <div class="tl-label" data-en="Total reset. Everything disappears. Tomorrow, blank page.">Reinicio total. Todo desaparece. Mañana, página en blanco.</div>
         </div>
       </div>
     </div>
@@ -953,9 +982,9 @@ footer{
     </div>
 
     <div class="celestia-copy">
-      <span class="eyebrow reveal"><span class="dot"></span>INTELIGENCIA SOCIAL</span>
-      <h2 class="reveal">Conoce a <span class="grad-brand">CelestIA</span></h2>
-      <p class="lead reveal">
+      <span class="eyebrow reveal"><span class="dot"></span><span data-en="SOCIAL INTELLIGENCE">INTELIGENCIA SOCIAL</span></span>
+      <h2 class="reveal" data-en='Meet <span class="grad-brand">CelestIA</span>'>Conoce a <span class="grad-brand">CelestIA</span></h2>
+      <p class="lead reveal" data-en='<b style="color:#fff">CelestIA</b> is the social artificial intelligence of Grupyx. She doesn&#39;t push content at you — she understands your energy and connects it with the right energy at the right moment.'>
         <b style="color:#fff">CelestIA</b> es la inteligencia artificial social de Grupyx.
         No te empuja contenido — entiende tu energía y la conecta con la energía adecuada en el momento adecuado.
       </p>
@@ -963,33 +992,33 @@ footer{
       <div class="cards-grid">
         <div class="mini-card reveal" data-stagger style="--i:0">
           <div class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M5 8a7 7 0 0114 0v3a7 7 0 01-14 0V8z"/><path d="M9 22h6" stroke-linecap="round"/></svg></div>
-          <h4>Conversaciones por voz</h4>
-          <p>Habla con CelestIA. Te entiende, recuerda y propone planes a partir de cómo te expresas.</p>
+          <h4 data-en="Voice conversations">Conversaciones por voz</h4>
+          <p data-en="Talk to CelestIA. She understands you, remembers, and suggests plans based on how you express yourself.">Habla con CelestIA. Te entiende, recuerda y propone planes a partir de cómo te expresas.</p>
         </div>
         <div class="mini-card reveal" data-stagger style="--i:1">
           <div class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l5 5L21 5" stroke-linecap="round"/></svg></div>
-          <h4>Tus planes</h4>
-          <p>Aprende de los planes a los que vas, los que ignoras y los que te emocionan.</p>
+          <h4 data-en="Your plans">Tus planes</h4>
+          <p data-en="She learns from the plans you join, the ones you ignore, and the ones that excite you.">Aprende de los planes a los que vas, los que ignoras y los que te emocionan.</p>
         </div>
         <div class="mini-card reveal" data-stagger style="--i:2">
           <div class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M3 12c4 0 6-2 9-2s5 2 9 2" stroke-linecap="round"/></svg></div>
-          <h4>Tus chats</h4>
-          <p>Detecta el tono, el ritmo y la afinidad real entre personas — sin invadir tu privacidad.</p>
+          <h4 data-en="Your chats">Tus chats</h4>
+          <p data-en="She detects the tone, rhythm and real affinity between people — without invading your privacy.">Detecta el tono, el ritmo y la afinidad real entre personas — sin invadir tu privacidad.</p>
         </div>
         <div class="mini-card reveal" data-stagger style="--i:3">
           <div class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M6 9v3l6 3 6-3V9" /></svg></div>
-          <h4>Compatibilidad dinámica</h4>
-          <p>La afinidad no es fija. Cambia según el momento, el día y tu energía social.</p>
+          <h4 data-en="Dynamic compatibility">Compatibilidad dinámica</h4>
+          <p data-en="Affinity isn't fixed. It changes with the moment, the day, and your social energy.">La afinidad no es fija. Cambia según el momento, el día y tu energía social.</p>
         </div>
         <div class="mini-card reveal" data-stagger style="--i:4">
           <div class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1 3-6z"/></svg></div>
-          <h4>Matching contextual</h4>
-          <p>No une personas “parecidas”. Une personas <b style="color:#fff">disponibles, cerca y con la misma vibra</b> esta noche.</p>
+          <h4 data-en="Contextual matching">Matching contextual</h4>
+          <p data-en='Doesn&#39;t connect &quot;similar&quot; people. Connects people <b style="color:#fff">available, nearby and on the same vibe</b> tonight.'>No une personas “parecidas”. Une personas <b style="color:#fff">disponibles, cerca y con la misma vibra</b> esta noche.</p>
         </div>
         <div class="mini-card reveal" data-stagger style="--i:5">
           <div class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></div>
-          <h4>Aprende lo que te apetece</h4>
-          <p>Lo que dices, callas y eliges. CelestIA convierte señales débiles en planes fuertes.</p>
+          <h4 data-en="Learns what you want">Aprende lo que te apetece</h4>
+          <p data-en="What you say, what you don't, what you pick. CelestIA turns weak signals into strong plans.">Lo que dices, callas y eliges. CelestIA convierte señales débiles en planes fuertes.</p>
         </div>
       </div>
     </div>
@@ -1000,56 +1029,56 @@ footer{
 <section class="matching" id="matching">
   <div class="container">
     <div class="matching-head">
-      <span class="eyebrow reveal"><span class="dot"></span>EVOLUCIÓN DEL MATCHING</span>
-      <h2 class="reveal">
+      <span class="eyebrow reveal"><span class="dot"></span><span data-en="MATCHING EVOLUTION">EVOLUCIÓN DEL MATCHING</span></span>
+      <h2 class="reveal" data-en='The more she knows you, <span class="grad-brand">the better your plans get.</span>'>
         Cuanto más te conoce,
         <span class="grad-brand">mejores son tus planes.</span>
       </h2>
-      <p class="lead reveal">Cinco fases. Una sola misión: encontrar la energía correcta para el momento correcto.</p>
+      <p class="lead reveal" data-en="Five phases. One mission: find the right energy for the right moment.">Cinco fases. Una sola misión: encontrar la energía correcta para el momento correcto.</p>
     </div>
 
     <div class="phases">
       <div class="phase reveal" data-stagger style="--i:0">
         <div class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9" stroke-dasharray="3 4"/></svg></div>
         <div class="pct">0–24%</div>
-        <div class="pname">Aprendiendo</div>
-        <div class="pdesc">CelestIA observa. Empieza a entender tu ritmo, tus respuestas y tu energía base.</div>
+        <div class="pname" data-en="Learning">Aprendiendo</div>
+        <div class="pdesc" data-en="CelestIA observes. She starts to understand your rhythm, your responses and your base energy.">CelestIA observa. Empieza a entender tu ritmo, tus respuestas y tu energía base.</div>
       </div>
       <div class="phase reveal" data-stagger style="--i:1">
         <div class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12h8M12 8v8" stroke-linecap="round"/><circle cx="12" cy="12" r="9"/></svg></div>
         <div class="pct">25%</div>
-        <div class="pname">Matching básico</div>
-        <div class="pdesc">Primeros planes sugeridos por proximidad, hora y afinidad inicial.</div>
+        <div class="pname" data-en="Basic matching">Matching básico</div>
+        <div class="pdesc" data-en="First plans suggested by proximity, time and initial affinity.">Primeros planes sugeridos por proximidad, hora y afinidad inicial.</div>
       </div>
       <div class="phase reveal" data-stagger style="--i:2">
         <div class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12c3-4 7-6 9-6s6 2 9 6c-3 4-7 6-9 6s-6-2-9-6z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></div>
         <div class="pct">50%</div>
-        <div class="pname">Matching completo</div>
-        <div class="pdesc">Cruces más finos. La IA empieza a entender no solo qué te gusta, sino con quién.</div>
+        <div class="pname" data-en="Full matching">Matching completo</div>
+        <div class="pdesc" data-en="Sharper crossings. The AI starts to understand not just what you like, but with whom.">Cruces más finos. La IA empieza a entender no solo qué te gusta, sino con quién.</div>
       </div>
       <div class="phase reveal" data-stagger style="--i:3">
         <div class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
         <div class="pct">75%</div>
-        <div class="pname">Modo reactivo</div>
-        <div class="pdesc">CelestIA responde a tu intención en segundos. Le pides plan, te lo construye.</div>
+        <div class="pname" data-en="Reactive mode">Modo reactivo</div>
+        <div class="pdesc" data-en="CelestIA responds to your intent in seconds. You ask for a plan, she builds it.">CelestIA responde a tu intención en segundos. Le pides plan, te lo construye.</div>
       </div>
       <div class="phase reveal" data-stagger style="--i:4">
         <div class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></div>
         <div class="pct">90%</div>
-        <div class="pname">Modo proactivo</div>
-        <div class="pdesc">Te anticipa el plan antes de pensarlo. Aparece la noche correcta, con la gente correcta.</div>
+        <div class="pname" data-en="Proactive mode">Modo proactivo</div>
+        <div class="pdesc" data-en="She anticipates the plan before you think it. The right night appears, with the right people.">Te anticipa el plan antes de pensarlo. Aparece la noche correcta, con la gente correcta.</div>
       </div>
     </div>
 
     <div class="knowledge-bar reveal">
       <div class="kb-head">
-        <h4>Nivel de conocimiento de CelestIA sobre ti</h4>
+        <h4 data-en="CelestIA's knowledge of you">Nivel de conocimiento de CelestIA sobre ti</h4>
         <div class="kb-val" id="kbVal">0%</div>
       </div>
       <div class="kb-track"><div class="kb-fill" id="kbFill"></div></div>
     </div>
 
-    <p class="kb-quote reveal">
+    <p class="kb-quote reveal" data-en="CelestIA doesn't look for random people.<br/><b>She looks for the right energy at the right moment.</b>">
       CelestIA no busca personas aleatorias.<br/>
       <b>Busca la energía correcta para el momento correcto.</b>
     </p>
@@ -1070,9 +1099,9 @@ footer{
     </div>
 
     <div class="lumen-copy">
-      <span class="eyebrow reveal"><span class="dot"></span>EL ESPÍRITU DE LA APP</span>
-      <h2 class="reveal">Conoce a <span class="gline">Lumen</span></h2>
-      <p class="lead reveal">
+      <span class="eyebrow reveal"><span class="dot"></span><span data-en="THE APP'S SPIRIT">EL ESPÍRITU DE LA APP</span></span>
+      <h2 class="reveal" data-en='Meet <span class="gline">Lumen</span>'>Conoce a <span class="gline">Lumen</span></h2>
+      <p class="lead reveal" data-en='CelestIA&#39;s ghost companion. He shows up when the night gets sleepy, celebrates when there&#39;s a match, and sneaks into the app to remind you that <b style="color:#fff">something can always happen</b>.'>
         El compañero fantasma de CelestIA. Aparece cuando la noche se duerme, celebra cuando hay match
         y se cuela en la app para recordarte que <b style="color:#fff">algo siempre puede pasar</b>.
       </p>
@@ -1080,19 +1109,19 @@ footer{
       <div class="lumen-points">
         <div class="lp reveal" data-stagger style="--i:0">
           <span class="lpi">👻</span>
-          <p><b>Aparece cuando no hay movimiento.</b> Si la cosa está plana, Lumen empuja la chispa.</p>
+          <p data-en="<b>He shows up when nothing's happening.</b> If things go flat, Lumen pushes the spark."><b>Aparece cuando no hay movimiento.</b> Si la cosa está plana, Lumen empuja la chispa.</p>
         </div>
         <div class="lp reveal" data-stagger style="--i:1">
           <span class="lpi">💬</span>
-          <p><b>Hace comentarios.</b> Travieso, con humor, nunca pesado. Es parte de la noche, no de la app.</p>
+          <p data-en="<b>He drops comments.</b> Mischievous, witty, never annoying. He's part of the night, not part of the app."><b>Hace comentarios.</b> Travieso, con humor, nunca pesado. Es parte de la noche, no de la app.</p>
         </div>
         <div class="lp reveal" data-stagger style="--i:2">
           <span class="lpi">✨</span>
-          <p><b>Celebra cada match.</b> Cuando se forma un plan, Lumen aparece con su pequeño ritual.</p>
+          <p data-en="<b>He celebrates every match.</b> When a plan forms, Lumen shows up with his little ritual."><b>Celebra cada match.</b> Cuando se forma un plan, Lumen aparece con su pequeño ritual.</p>
         </div>
         <div class="lp reveal" data-stagger style="--i:3">
           <span class="lpi">🌙</span>
-          <p><b>Mantiene viva la experiencia.</b> Es lo que hace que Grupyx no se sienta como otra app — se sienta como una historia.</p>
+          <p data-en="<b>He keeps the experience alive.</b> He's what makes Grupyx not feel like another app — it feels like a story."><b>Mantiene viva la experiencia.</b> Es lo que hace que Grupyx no se sienta como otra app — se sienta como una historia.</p>
         </div>
       </div>
     </div>
@@ -1103,41 +1132,41 @@ footer{
 <section class="vs" id="vs">
   <div class="container">
     <div class="vs-head">
-      <span class="eyebrow reveal"><span class="dot"></span>LA DIFERENCIA</span>
-      <h2 class="reveal">
+      <span class="eyebrow reveal"><span class="dot"></span><span data-en="THE DIFFERENCE">LA DIFERENCIA</span></span>
+      <h2 class="reveal" data-en='The endless loop <span class="grad-brand">vs today&#39;s plan.</span>'>
         El loop infinito
         <span class="grad-brand">vs el plan de hoy.</span>
       </h2>
-      <p class="lead reveal">Dos formas opuestas de mirar el móvil. Solo una te lleva a algún sitio.</p>
+      <p class="lead reveal" data-en="Two opposite ways to look at your phone. Only one takes you somewhere.">Dos formas opuestas de mirar el móvil. Solo una te lleva a algún sitio.</p>
     </div>
 
     <div class="vs-grid">
       <div class="vs-card dim reveal" data-stagger style="--i:0">
-        <span class="eyebrow" style="align-self:flex-start">APPS TRADICIONALES</span>
-        <h3>El loop infinito.</h3>
+        <span class="eyebrow" style="align-self:flex-start" data-en="TRADITIONAL APPS">APPS TRADICIONALES</span>
+        <h3 data-en="The endless loop.">El loop infinito.</h3>
         <div class="vs-list">
-          <div class="vs-item"><span class="mark">×</span>Scroll infinito sin destino</div>
-          <div class="vs-item"><span class="mark">×</span>Postureo y vidas filtradas</div>
-          <div class="vs-item"><span class="mark">×</span>Chats que mueren después de tres mensajes</div>
-          <div class="vs-item"><span class="mark">×</span>Planes para “algún día”</div>
-          <div class="vs-item"><span class="mark">×</span>Algoritmos para que te quedes dentro</div>
+          <div class="vs-item"><span class="mark">×</span><span data-en="Endless scroll going nowhere">Scroll infinito sin destino</span></div>
+          <div class="vs-item"><span class="mark">×</span><span data-en="Fakery and filtered lives">Postureo y vidas filtradas</span></div>
+          <div class="vs-item"><span class="mark">×</span><span data-en="Chats that die after three messages">Chats que mueren después de tres mensajes</span></div>
+          <div class="vs-item"><span class="mark">×</span><span data-en='Plans for "someday"'>Planes para “algún día”</span></div>
+          <div class="vs-item"><span class="mark">×</span><span data-en="Algorithms designed to keep you inside">Algoritmos para que te quedes dentro</span></div>
         </div>
       </div>
 
       <div class="vs-card lit reveal" data-stagger style="--i:1">
         <span class="eyebrow" style="align-self:flex-start;border-color:rgba(177,75,255,.4);color:#fff"><span class="dot"></span>GRUPYX</span>
-        <h3>El plan de hoy.</h3>
+        <h3 data-en="Today's plan.">El plan de hoy.</h3>
         <div class="vs-list">
-          <div class="vs-item"><span class="mark">✓</span>Planes en tiempo real, no contenido</div>
-          <div class="vs-item"><span class="mark">✓</span>Espontaneidad por diseño</div>
-          <div class="vs-item"><span class="mark">✓</span>IA contextual, no algoritmo manipulador</div>
-          <div class="vs-item"><span class="mark">✓</span>Conexiones reales, cara a cara</div>
-          <div class="vs-item"><span class="mark">✓</span>Urgencia social: hoy o nunca</div>
+          <div class="vs-item"><span class="mark">✓</span><span data-en="Real-time plans, not content">Planes en tiempo real, no contenido</span></div>
+          <div class="vs-item"><span class="mark">✓</span><span data-en="Spontaneity by design">Espontaneidad por diseño</span></div>
+          <div class="vs-item"><span class="mark">✓</span><span data-en="Contextual AI, not a manipulative algorithm">IA contextual, no algoritmo manipulador</span></div>
+          <div class="vs-item"><span class="mark">✓</span><span data-en="Real connections, face to face">Conexiones reales, cara a cara</span></div>
+          <div class="vs-item"><span class="mark">✓</span><span data-en="Social urgency: today or never">Urgencia social: hoy o nunca</span></div>
         </div>
       </div>
     </div>
 
-    <p class="vs-quote reveal">
+    <p class="vs-quote reveal" data-en='The best night usually starts <span class="grad">30 minutes before.</span>'>
       La mejor noche suele empezar <span class="grad">30 minutos antes.</span>
     </p>
   </div>
@@ -1147,9 +1176,9 @@ footer{
 <section class="cta" id="descargar">
   <div class="cta-glow"></div>
   <div class="container">
-    <span class="eyebrow reveal"><span class="dot"></span>HOY · AHORA · GRUPYX</span>
-    <h2 class="reveal">Hoy puede <span class="grad">pasar algo.</span></h2>
-    <p class="sub reveal">Pero <b>mañana</b> todo desaparece.</p>
+    <span class="eyebrow reveal"><span class="dot"></span><span data-en="TODAY · NOW · GRUPYX">HOY · AHORA · GRUPYX</span></span>
+    <h2 class="reveal" data-en='Today <span class="grad">something could happen.</span>'>Hoy puede <span class="grad">pasar algo.</span></h2>
+    <p class="sub reveal" data-en="But <b>tomorrow</b> it all disappears.">Pero <b>mañana</b> todo desaparece.</p>
 
     <div class="cta-badge-wrap reveal-scale">
       <a href="#" class="apple-badge lg" aria-label="Download on the App Store">
@@ -1161,7 +1190,7 @@ footer{
       </a>
     </div>
 
-    <p class="cta-foot reveal">Disponible cada día · 12:00 — 02:00 AM</p>
+    <p class="cta-foot reveal" data-en="Available every day · 12:00 — 02:00 AM">Disponible cada día · 12:00 — 02:00 AM</p>
   </div>
 </section>
 
@@ -1173,7 +1202,7 @@ footer{
         <img src="LogoGrupyx.jpg" alt="Grupyx" />
         Grupy<span style="background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent">x</span>
       </div>
-      <p>La red social que desaparece cada día. Solo de 12:00 a 02:00 AM. Potenciada por CelestIA y acompañada por Lumen.</p>
+      <p data-en="The social network that disappears every day. Only from 12:00 to 02:00 AM. Powered by CelestIA, kept alive by Lumen.">La red social que desaparece cada día. Solo de 12:00 a 02:00 AM. Potenciada por CelestIA y acompañada por Lumen.</p>
     </div>
     <div class="foot-col">
       <h5>App</h5>
@@ -1185,18 +1214,18 @@ footer{
       </ul>
     </div>
     <div class="foot-col">
-      <h5>Sígue&shy;nos</h5>
+      <h5 data-en="Follow us">Sígue&shy;nos</h5>
       <ul>
         <li><a href="#">Instagram</a></li>
         <li><a href="#">TikTok</a></li>
         <li><a href="#">X / Twitter</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#" data-en="Contact">Contacto</a></li>
       </ul>
     </div>
   </div>
   <div class="foot-bottom">
-    <span>© <span id="year"></span> Grupyx. Hoy o nunca.</span>
-    <span>Hecho con noche, IA y un fantasma morado.</span>
+    <span data-en='© <span id="year"></span> Grupyx. Today or never.'>© <span id="year"></span> Grupyx. Hoy o nunca.</span>
+    <span data-en="Built with night, AI, and a purple ghost.">Hecho con noche, IA y un fantasma morado.</span>
   </div>
 </footer>
 
@@ -1423,6 +1452,55 @@ if (heroLogoWrap && !window.matchMedia('(prefers-reduced-motion: reduce)').match
       lastSpawn = now;
     }
   }, { passive: true });
+})();
+
+/* ============================================
+   I18N — sistema bilingüe ES/EN
+   Cada elemento traducible tiene data-en="..."
+   El HTML por defecto es ES. JS intercambia innerHTML.
+   ============================================ */
+(function(){
+  const STORAGE_KEY = 'grupyx-lang';
+  const btns = document.querySelectorAll('.lang-btn');
+
+  function applyLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en]').forEach(el => {
+      // Guardar la versión ES original la primera vez
+      if (el.dataset.es === undefined) el.dataset.es = el.innerHTML;
+      el.innerHTML = (lang === 'en') ? el.dataset.en : el.dataset.es;
+    });
+    // Atributos especiales (placeholder, aria-label, title) con data-en-placeholder, etc.
+    document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+      if (el.dataset.esPlaceholder === undefined) el.dataset.esPlaceholder = el.placeholder || '';
+      el.placeholder = (lang === 'en') ? el.dataset.enPlaceholder : el.dataset.esPlaceholder;
+    });
+    document.querySelectorAll('[data-en-aria]').forEach(el => {
+      if (el.dataset.esAria === undefined) el.dataset.esAria = el.getAttribute('aria-label') || '';
+      el.setAttribute('aria-label', (lang === 'en') ? el.dataset.enAria : el.dataset.esAria);
+    });
+    // Title de la pestaña
+    const titleEl = document.querySelector('title');
+    if (titleEl && titleEl.dataset.en) {
+      if (!titleEl.dataset.es) titleEl.dataset.es = titleEl.textContent;
+      titleEl.textContent = (lang === 'en') ? titleEl.dataset.en : titleEl.dataset.es;
+    }
+    // Estado del toggle
+    btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false'));
+    // Reinsertar año (su span se regenera con el innerHTML)
+    const yEl = document.getElementById('year');
+    if (yEl) yEl.textContent = new Date().getFullYear();
+    localStorage.setItem(STORAGE_KEY, lang);
+  }
+
+  // Listeners del toggle
+  btns.forEach(b => b.addEventListener('click', () => applyLang(b.dataset.lang)));
+
+  // Idioma inicial: localStorage > navegador > 'es'
+  const stored = localStorage.getItem(STORAGE_KEY);
+  const browser = (navigator.language || 'es').toLowerCase().slice(0,2);
+  const initial = stored || (browser === 'en' ? 'en' : 'es');
+  applyLang(initial);
 })();
 
 /* ============================================
